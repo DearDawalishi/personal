@@ -3,9 +3,28 @@
 <title>亲爱的达瓦里氏</title>
 </head>
 <body>
+<h1 class = "Days">Hello!</h1>
+<script>
+async function a(){
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+ 
+while(1){
+var new_day =28 -( new Date().getDate() ) 
+var new_hour =24 -( new Date().getHours() )
+var new_minute =60 -( new Date().getMinutes() )
+var new_second =60 -( new Date().getSeconds() )
+var new_infor = `距离2025春节还有${new_day}天，${new_hour}小时，${new_minute}分钟，${new_second}秒`
+document.querySelector(".Days").innerText = new_infor;
+await wait(100)
+}
+}
+a()
+</script>
 <h1>亲爱的达瓦里氏の专属网站</h1>
 <hr/>
-<h2>0.2.1版本</h2>
+<h2>0.2.2版本</h2>
 <hr/>
 <br/>
 <ul>
