@@ -9,13 +9,28 @@ async function a(){
 function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
- 
+var today = new Date()
 while(1){
-var new_day =28 -( new Date().getDate() ) 
-var new_hour =24 -( new Date().getHours() )
-var new_minute =60 -( new Date().getMinutes() )
-var new_second =60 -( new Date().getSeconds() )
-var new_infor = `距离2025春节还有${new_day}天，${new_hour}小时，${new_minute}分钟，${new_second}秒`
+var new_month = 11 - today.getMonth()
+var new_day
+if(new Date().getDate() <= 16){
+	new_day = 16 - new Date().getDate()
+}
+else if(new Date().getDate() > 16){
+	if([4,6,9,11].includes(today.getMonth() +1)){
+		new_day = new Date().getDate() -11
+	}
+	else if([1,3,5,7,8,10,12].includes(today.getMonth() +1)){
+		new_day = today.getDate() -10
+	}
+	else{
+		new_day = today.getDate() -13
+	}
+}
+var new_hour =23 -( new Date().getHours() )
+var new_minute =59 -( new Date().getMinutes() )
+var new_second =59 -( new Date().getSeconds() )
+var new_infor = `距离2026春节还有${new_month}月， ${new_day}天，${new_hour}小时，${new_minute}分钟，${new_second}秒`
 document.querySelector(".Days").innerText = new_infor;
 await wait(100)
 }
